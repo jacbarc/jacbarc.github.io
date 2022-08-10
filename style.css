@@ -1,0 +1,504 @@
+/* || GENERAL RULES / SITEWIDE */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Taviraj', 'Roboto', 'Cambria', serif; 
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+img { 
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+.cleared { 
+  clear: both;  
+  }
+.hover-img img:hover {
+  width: 99%;
+  border: 3px double goldenrod;
+}
+/* || TYPOGRAPHY / SITEWIDE */
+h2 {
+  font-size: 2em;
+  padding: 0 1em;
+  margin: 0;
+  text-align: center;
+}
+h3 {
+  font-size: 2vw;
+  text-align: center;
+}
+h4 {
+  font-size: 1.1vw;
+  text-align: center;
+}
+h5 {
+  font-size: 1.8em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h6 {
+  font-size: 1.5em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p {
+  font-size: 1.5em;
+  text-align: justify;
+  padding: 1em;
+}
+.padding-left-right-only { 
+  padding: 0 1em;
+  margin: 0;
+}
+.a-no-decoration {
+  text-decoration: none;
+}
+.a-no-decoration:hover {
+  text-decoration: underline;
+}
+.ablack {
+ color: black;
+}
+.ablack:visited {
+  color: black;
+}
+.subheader {
+  border-top: 1px solid black;
+  margin: 1em auto;
+  width: 95%;
+  
+}
+.subheader h2 {
+  text-align: left;
+}
+.text-aling-left {
+  text-align: left;
+  padding: 0.2em 0.1em;
+}
+
+/* || ANIMATIONS / SITEWIDE */
+.animated-right-to-left {
+  padding: 0;
+  margin: 0;
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+/* || HEADER AND MAIN NAVIGATION / SITEWIDE */
+/* || HEADER / SITEWIDE*/
+.sitewide-navigation {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.2976540958180147) 0%, rgba(0,0,0,1) 100%);
+  opacity: 0.9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between; 
+  font-family: 'Roboto', sans-serif; 
+}
+.sitewide-navigation span {  
+  font-size: 3em;
+  padding: 0 0 0 0.2em;
+  cursor: pointer;
+  color: white;
+}
+.sitewide-navigation-logo {  
+  padding-top: 0.5em;
+  max-width: 100%;
+}
+
+
+/* MAIN NAVIGATION - OVERLAY NAV FOR MOBILE DEVICES / SITEWIDE */
+
+.sitewide-navigation {
+  z-index: 1;
+}
+@media screen and (max-width:1049px) {
+
+  .sitewide-navigation-main {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 1s;
+  }
+
+  .sitewide-navigation-main-content {
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+  }
+
+
+  .sitewide-navigation-main a {
+  padding: 1em;
+  text-decoration: none;
+  font-size: 2em;
+  color: #979b60;
+  display: block;
+  transition: 0.3s;
+  }
+
+  .sitewide-navigation-main a:hover, .sitewide-navigation-main a:focus {
+  color: #f1f1f1;
+  }
+  .sitewide-navigation-main .closebtn {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 3em;
+  }
+  @media screen and (max-height: 450px) {
+  .sitewide-navigation-main {overflow-y: auto;}
+  .sitewide-navigation-main a {font-size: 1.5em}
+  .sitewide-navigation-main .closebtn {
+  font-size: 2em;
+  top: 15px;
+  right: 35px;
+  bottom: 10px;
+  }
+  }
+  @media screen and (max-height: 700px) {
+  .sitewide-navigation-main {overflow-y: auto;}
+  }
+  }
+  @media screen and (max-width: 1049px) {
+  .sitewide-navigation-main {overflow-y: auto;}
+  }
+
+/* || MAIN NAVIGATION FOR WIDE SCREEN / SITEWIDE */
+@media screen and (min-width:1050px) {
+  .openbtn {
+    display: none;
+  }
+  .closebtn {
+    display: none;
+  }
+  .sitewide-navigation {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .sitewide-navigation-logo {
+    flex: 1;
+  }
+  .sitewide-navigation-main {
+    flex: 8;
+    margin: auto 0;
+  }
+  .sitewide-navigation-main-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .sitewide-navigation-main-content a {
+    text-decoration: none;
+    color: white; 
+    font-size: 2em;
+    font-weight: 100;
+  }  
+  .sitewide-navigation-main-content a:nth-of-type(1):hover {
+    color: red;
+  }
+  .sitewide-navigation-main-content a:nth-of-type(2):hover {
+    color: orange;
+  }
+  .sitewide-navigation-main-content a:nth-of-type(3):hover {
+    color: yellow;
+  }
+  .sitewide-navigation-main-content a:nth-of-type(4):hover {
+    color: green;
+  }
+  .sitewide-navigation-main-content a:nth-of-type(5):hover {
+    color: blue;
+  }
+  .sitewide-navigation-main-content a:nth-of-type(6):hover {
+    color: navy;
+  }
+  .sitewide-navigation-main-content a:nth-of-type(7):hover {
+    color: purple;
+  }
+}
+/* || FOOTER / SITEWIDE */
+.footer-sitewide {
+  background-color: antiquewhite;
+  
+}
+.footer-sitewide-content {
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; 
+}
+.footer-sitewide-content a {
+  padding: 1em 1em;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  margin: auto 0;
+  
+}
+.footer-sitewide-content-text {
+  margin: 0 0.5em;
+  display: flex;
+  flex-flow: column wrap;
+  
+  
+}
+.footer-sitewide-content-text-element {
+  box-sizing: border-box;  
+  border-top: 1px solid black;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  padding: 0.4em;
+  margin-bottom: 1em;  
+}
+
+
+.footer-sitewide-content-text-element a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.footer-sitewide-content-text-element h3 {
+  font-size: 1.5em;
+  text-align: left;
+}
+.footer-sitewide-content-text-element p {
+  font-size: 1.2em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+.footer-sitewide-content-text-element a:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 500px) {
+  .footer-sitewide-content {
+    font-size: 5vw;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .footer-sitewide-content-text {
+    margin: 0 0.5em;
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+  }
+  .footer-sitewide-content-text-element {
+    border-right: 1px solid black;
+    border-top: none;
+  }
+  .footer-sitewide-content-text-element:last-of-type {
+    border-right: none;
+  }
+}
+
+/* || INDEX.HTML */
+.index-main-content {
+  margin: 1em auto;
+  padding-bottom: 1em; 
+  width: 95%;
+  }
+
+.index-arrival-img {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-image: url("../images/artgallery2.jpg");
+    background-attachment: fixed;
+    background-position: 50%;
+  }
+  .index-arrival-img-message {
+    color: white;
+    background-color: black;
+    opacity: 0.8;
+    width: 100%;
+  }
+  .index-arrival-img-message h2 {
+    text-align: left;
+  }
+ .index-arrival-img-message p {
+  text-align: left;
+ }
+ .index-visitus-content-img h2{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif 
+ }
+ .index-visitus-content-text-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ }
+ .index-visitus-content-text p:first-of-type {
+  text-align: center;
+  color: green;
+  font-weight: 600;
+ }
+ .index-visitus-content-text p:last-of-type {
+  font-weight: 600;
+ }
+ /* TODO font weight set to 500, because last of type affect p in both divs, maybe there is a other way around?  */
+ .index-visitus-content-text-table p:last-of-type {
+  font-weight: 500;
+ }
+ /* TODO same like above w.first of type */
+ .index-visitus-content-text-table p:first-of-type {
+  text-align: left;
+  color: black;
+  font-weight: 500;
+ }
+ .index-blog-content {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around; 
+ }
+
+ .index-blog-content-text {
+  flex: 1;
+  padding: 1em;
+  border-bottom: 1px solid black;
+
+ }
+ .index-blog-content-text:last-of-type {
+  border-right: none;
+ }
+ .index-blog-content-text h3 {
+  font-size: 1.5em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+ }
+ .index-blog-content-text p {
+  font-size: 1em;
+  text-align: left;
+  padding: 0.1em;
+ }
+ .index-artstory-content {
+  display: flex;
+  flex-flow: column wrap;
+  border-bottom: 1px solid black;
+ }
+ .index-artstory-content-text {
+  width: 95%;
+  margin: 0 auto;
+ }
+ .index-artstory-content-text h5 {
+  font-family: 'Taviraj', 'Roboto', 'Cambria', serif;
+  border-bottom: 1px solid black;
+ }
+ .index-artstory-content-text p:last-of-type {
+  font-weight: 600;
+ }
+
+@media screen and (min-width: 1050px) {
+  .index-main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr 2fr 1fr;
+    gap: 0.1vw;
+    padding: 0.1vw;
+  }
+  .index-main-content-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .index-main-content-img picture{
+   object-fit: fill;
+  }  
+  .index-arrival-img-message {
+    width: 30%;
+    height: 40%;
+  }
+  .index-visitus-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1vw;
+    margin: 0 0.2vw;
+  }
+ 
+  .index-visitus-content-img img {
+    height: 60vh;
+    width: 99%;     
+  }
+  .index-blog-content {
+    flex-flow: row nowrap;
+  }
+  .index-blog-content-text {
+    border-right: 1px solid black;
+    border-bottom: none;
+  }
+  .index-blog-content-text:hover {
+    background-color: blue;
+    color: white;
+  }
+  .index-blog-content-text a {
+    text-decoration: none;
+  }
+  .index-blog-content-text:hover a {
+    color: #00ff95;
+  }
+  .index-artstory-content {
+    flex-flow: row nowrap;
+   }
+  .index-artstory-content-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .index-artstory-content-text h6 {
+    flex: 1;
+  }
+  .index-artstory-content-text p:first-of-type {
+    flex:3;
+  }
+  .index-artstory-content-text p:last-of-type {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 1049px) {
+  h3 {
+    font-size: 1.8em;
+  }
+  h4 {
+    font-size: 1em;
+  }
+}
+
